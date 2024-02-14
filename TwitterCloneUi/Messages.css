@@ -1,0 +1,105 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    --twitter-color: #5b676e;
+    --twitter-background:#5b676e;
+    background-color: #000000;
+    display: flex;
+    height: 100vh;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
+}
+.sidebar {
+    border-right: 1px solid #272727;
+    flex: 0.2;
+    background-color: black;
+    min-width: 250px;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.sidebarOption {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 20px;
+    color: #e6ecf0;
+    transition: background-color 100ms ease-out, color 100ms ease-out;
+}
+
+.sidebarOption:hover {
+    background-color: #2A2A2A;
+    border-radius: 30px;
+}
+.sidebarOption.active {
+    color: #2A2A2A;
+}
+.sidebarOption a{
+    text-decoration: none;
+    color: #e6ecf0;
+}
+.sidebar__tweet {
+    width: 100%;
+    background-color: rgb(3, 0, 0);
+    border: 1px solid #272727;
+    color: white;
+    font-weight: 900;
+    border-radius: 30px;
+    height: 50px;
+    margin-top: 20px;
+    position: relative; 
+}
+.sidebar__tweet:hover {
+    background-color: #e6ecf0;
+    color: #000000;
+}
+.logout {
+    height: 35px;
+    width: 35px;
+    margin-right: 13px;
+}
+
+.material-icons{
+    padding: 10px;
+}
+.HEADers{
+    color: #e6ecf0;
+}
+.Messagesinfo{
+    padding: 80PX;
+    border-top:1px solid #272727 ;
+    border-right:  1px solid #272727;
+    border-bottom:  1px solid #272727;
+    margin-top: 100px;
+    background-color: #000000;
+    color: #e6ecf0;
+}
+.Messagesinfo h3{
+    font-size: 35px;
+}
+.Messagesinfo p{
+    color:#5b676e;
+}
+.btnmsg{
+    border: 1px solid #272727;
+    background-color: #000000;
+    color: #e6ecf0;
+    margin-top: 20px;
+    border-radius: 40px;
+    padding: 20px;
+    font-weight:900;
+}
+.btnmsg:hover {
+    background-color: #e6ecf0;
+    color: #000000;
+}
