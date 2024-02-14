@@ -75,20 +75,9 @@ body {
 /* Feed */
 .feed {
     flex: 0.5;
-    border-right: 1px solid var(--twitter-background);
     min-width: fit-content;
-    overflow-y: scroll;
-    scrollbar-width: thin;  
-    scrollbar-color: var(--twitter-background);
-    &::-webkit-scrollbar {
-        width: 12px;  
-    }
-    &::-webkit-scrollbar-track {
-        background-color: var(--your-scrollbar-track-color); 
-    }
-    &::-webkit-scrollbar-thumb {
-        background-color: var(--your-scrollbar-thumb-color); 
-    }
+    overflow-y: auto;
+    scrollbar-width:none;  
 }
 .feed__header {
     position: sticky;
@@ -135,7 +124,6 @@ nav a {
     transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 .tweetBox form {
-    
     background-color: black;
     display: flex;
     flex-direction: column;
@@ -149,27 +137,17 @@ nav a {
     border-radius: 30px;
     width: 100px;
     height: 40px;
-    margin-top: 20px;
     margin-left: 480px;
 }
-
+.profileNavbar{
+    padding: 10px;
+    position: relative; 
+}
 .profileNavbar:hover{
-    border: none;
-    border-bottom: 2px solid aliceblue;
+    border-bottom: 2px solid rgb(255, 255, 255);
 }
-
-.profileNavbar:after:enabled {
-    border: none;
-    border-bottom: 2px solid aliceblue;
-    border-radius: 5px;
-}
-.profilePic{
-    margin-top: 50px;
-    position: fixed;
-}
-
 .Username {
-    margin: 5px;
+    margin: 80px 20px;
 }
 
 .Follow {
@@ -185,8 +163,23 @@ nav a {
     padding-top: 100px;
     width: 100px;
 }
-.background{
+.background {
     background-color: #272727;
+    position: relative;
+}
+.profilePic{
+    margin-top: 100px;
+}
+
+.profilePic {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%;
+    position: absolute;
+    left: 15%;
+    bottom: 80%;
+    transform: translate(-50%, 50%);
+    border: 2px solid #fff;
 }
 
 
@@ -196,7 +189,6 @@ nav a {
     border-radius: 50%;
     height: 40px;
 }
-
 .post {
     background-color: black;
     display: flex;
@@ -246,6 +238,7 @@ nav a {
 
 /* Widgets */
 .widgets {
+    border-left: 1px solid var(--twitter-background);
     flex: 0.3;
 }
 .widgets__input {

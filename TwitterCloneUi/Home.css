@@ -5,6 +5,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
 body {
     --twitter-color: #272727;
     --twitter-background:#272727;
@@ -29,7 +30,6 @@ body {
 }
 
 .sidebarOption {
-    margin-top: 20px;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -37,10 +37,16 @@ body {
     color: #e6ecf0;
     transition: background-color 100ms ease-out, color 100ms ease-out;
 }
+.feed_hr{
+    border: none;
+    height: 1px; 
+    background-color: #333; 
+}
 
 .sidebarOption:hover {
     background-color: #2A2A2A;
     border-radius: 30px;
+    transition: .5s;
 }
 
 .sidebarOption.active {
@@ -60,6 +66,16 @@ body {
 .sidebar__tweet:hover {
     background-color: #e6ecf0;
     color: #000000;
+    transition: .5s;
+}
+.sidebarExit{
+    color: #e6ecf0;
+    text-decoration: none;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 20px;
 }
 
 .logout {
@@ -79,17 +95,7 @@ body {
     flex: 0.5;
     min-width: fit-content;
     overflow-y: auto;
-    scrollbar-width: thin;  
-    scrollbar-color: var(--twitter-background);
-    &::-webkit-scrollbar {
-        width: 12px;  
-    }
-    &::-webkit-scrollbar-track {
-        background-color: var(--your-scrollbar-track-color); 
-    }
-    &::-webkit-scrollbar-thumb {
-        background-color: var(--your-scrollbar-thumb-color); 
-    }
+    scrollbar-width:none;  
 }
 
 .feed__header {
@@ -97,8 +103,9 @@ body {
     background-color: rgb(8, 0, 0);
     z-index: 100;
     padding: 15px 20px;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    
 }
-
 .feed__header h2 {
     color: #e6ecf0;
     font-size: 20px;
@@ -106,10 +113,11 @@ body {
     text-decoration: none;
 }
 
-.feed__header h2:hover {
-    background-color: #2A2A2A;
-    border-radius: 30px;
-    text-decoration: underline;
+.feed__header h2.underline {
+
+}
+.feed__header h2.underline::after {
+
 }
 
 a{
@@ -124,7 +132,6 @@ a{
 
 .tweetBox {
     padding-bottom: 10px;
-    padding-right: 10px;
 }
 
 .tweetBox form {
@@ -132,14 +139,13 @@ a{
     display: flex;
     flex-direction: column;
 }
-
 .tweetbox__input {
+    background: #000000;
     display: flex;
     padding: 20px;
 }
-
 .tweetbox__input input {
-    background: #2A2A2A;
+    background: #000000;
     color: #e6ecf0;
     border-radius: 20px;
     padding: 10px;
@@ -159,19 +165,20 @@ a{
     width: 80px;
     height: 40px;
     margin-top: 20px;
-    margin-left: auto;
+    margin-bottom: 10px;
+    margin-left: 520px;
 }
 .tweetBox__tweetButton:hover {
     background-color: #e6ecf0;
     color: #000000;
+    transition: .5s;
 }
 
 
 /* Post */
 .post__avatar img {
     border-radius: 50%;
-    height: 40px;
-    
+    height: 50px;  
 }
 
 .post {
@@ -179,7 +186,7 @@ a{
     display: flex;
     align-items: flex-start;
     border-top: 1px solid var(--twitter-background);
-    padding-bottom: 10px;
+
 }
 
 .post__body img {
@@ -199,7 +206,6 @@ a{
     font-size: 15px;
     color: gray;
 }
-
 .post__headerText h3 {
     color: #e6ecf0;
     font-size: 15px;
@@ -211,7 +217,6 @@ a{
     margin-bottom: 10px;
     font-size: 15px;
 }
-
 .post__body {
     flex: 1;
     padding: 10px;
@@ -220,15 +225,14 @@ a{
 .post__avatar {
     padding: 20px;
 }
-
 /* Widgets */
 .widgets {
+    border-left:1px solid var(--twitter-background);
     background-color: #000000;
     flex: 0.3;
     display: flex;
     flex-direction: column;
 }
-
 .widgets__input {
     display: flex;
     align-items: center;
