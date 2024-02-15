@@ -30,3 +30,104 @@ function getUsernameFromLocalStorage() {
   document.addEventListener("DOMContentLoaded", function() {
     displayUsername();
   });
+
+//TWEET FUNCTION
+
+function postTextAreaValueToAPI(event) {
+  event.preventDefault();
+  
+  const textareaElement = document.getElementById("text-area");
+  const textAreaValue = textareaElement.value;
+
+  const apiUrl = "http://localhost:3000/api/v1/posts"; 
+  const token = localStorage.getItem('token');
+
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      'Authorization' : `Bearer ${token}`
+    },
+    body: JSON.stringify({ "content": textAreaValue }),
+  };
+
+  fetch(apiUrl, options)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`API request failed with status ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log("API response:", data);
+    })
+    .catch((error) => {
+      console.error("Error posting to API:", error);
+    });
+}
+
+
+
+//FUNCTION FOR GETTING USER POSTS 
+
+const token = localStorage.getItem('token');
+fetch('http://localhost:3000/api/v1/posts',{
+method :'GET',
+headers: {
+  "Authorization": `Bearer ${token}`,
+  "Accept":"application/json"
+}
+}).then(function (response){
+return response.json();
+}).then(function (posts) {
+// Assuming 'posts' is an array of post objects received from the API
+const postMainContainer = document.querySelector('.feed');
+
+posts.forEach(function(post) {
+  // Create the post container div
+  const postContainer = document.createElement('div');
+  postContainer.classList.add('post');
+
+  // Create the post avatar div and add it to the post container
+  const postAvatar = document.createElement('div');
+  postAvatar.classList.add('post__avatar');
+  postAvatar.innerHTML = '<img src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"/>';
+  postContainer.appendChild(postAvatar);
+
+  // Create the post body div and add it to the post container
+  const postBody = document.createElement('div');
+  postBody.classList.add('post__body');
+
+  // Create the post header div and add it to the post body
+  const postHeader = document.createElement('div');
+  postHeader.classList.add('post__header');
+
+  // Create the post header text div and add it to the post header
+  const postHeaderText = document.createElement('div');
+  postHeaderText.classList.add('post__headerText');
+  postHeaderText.innerHTML = `<h3>${post.postedBy}</h3>`; // Assuming 'username' is a property of the post object
+  postHeader.appendChild(postHeaderText);
+
+  // Create the post header description div and add it to the post header
+  const postHeaderDescription = document.createElement('div');
+  postHeaderDescription.classList.add('post__headerDescription');
+  postHeaderDescription.innerHTML = `<p>${post.content}</p>`; // Assuming 'content' is a property of the post object
+  postHeader.appendChild(postHeaderDescription);
+
+  // Add the post header to the post body
+  postBody.appendChild(postHeader);
+
+  // Create the post footer div and add it to the post body
+  const postFooter = document.createElement('div');
+  postFooter.classList.add('post__footer');
+  postFooter.innerHTML = '<span class="material-icons"> repeat favorite_border publish</span>';
+  postBody.appendChild(postFooter);
+  
+
+  // Add the post body to the post container
+  postContainer.appendChild(postBody);
+
+  // Add the post container to the post main container
+  postMainContainer.appendChild(postContainer);
+});
+});
