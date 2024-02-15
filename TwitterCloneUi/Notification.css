@@ -58,6 +58,10 @@ body {
     margin-top: 20px;
 }
 
+a{
+    text-decoration: none;
+}
+
 .usernamelogout{
     color: #e6ecf0;
     text-decoration: none;

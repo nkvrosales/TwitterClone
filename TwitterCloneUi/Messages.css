@@ -64,6 +64,10 @@ body {
     color: #000000;
 }
 
+a{
+    text-decoration: none;
+}
+
 .usernamelogout{
     color: #e6ecf0;
     text-decoration: none;
