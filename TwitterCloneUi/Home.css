@@ -67,6 +67,7 @@ body {
     background-color: #e6ecf0;
     color: #000000;
     transition: .5s;
+    cursor: pointer;
 }
 .sidebarExit{
     color: #e6ecf0;
@@ -139,6 +140,23 @@ a{
     display: flex;
     flex-direction: column;
 }
+
+.tweetBox textarea{
+    background: #000000;
+    display: flex;
+    padding: 20px;
+    color: #e6ecf0;
+    border-radius: 20px;
+    padding: 10px;
+    flex: 1;
+    margin-left: 20px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    overflow:hidden;
+    resize: none;    
+}
+
 .tweetbox__input {
     background: #000000;
     display: flex;
