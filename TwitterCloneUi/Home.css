@@ -247,7 +247,8 @@ a{
 }
 .post__headerText h3 {
     color: #e6ecf0;
-    font-size: 15px;
+    font-size: 16px;
+    font-weight:1000;
     margin-bottom: 5px;
 }
 
