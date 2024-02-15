@@ -58,6 +58,12 @@ body {
     margin-top: 20px;
 }
 
+.sidebar__tweet:hover {
+    background-color: #e6ecf0;
+    color: #000000;
+    cursor:pointer;
+}
+
 a{
     text-decoration: none;
 }
