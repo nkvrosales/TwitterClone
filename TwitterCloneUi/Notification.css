@@ -57,6 +57,26 @@ body {
     height: 50px;
     margin-top: 20px;
 }
+
+.usernamelogout{
+    color: #e6ecf0;
+    text-decoration: none;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 20px;
+    
+}
+
+.usernamelogout:hover{
+    background-color: #2A2A2A;
+    border-radius: 30px;
+    transition: .5s;
+}
+
+
+
 .logout {
     height: 35px;
     width: 35px;

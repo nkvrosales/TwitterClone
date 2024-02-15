@@ -30,6 +30,7 @@ body {
 }
 
 .sidebarOption {
+    margin-top: 20px;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -91,6 +92,24 @@ body {
     text-decoration: none;
     color: #e6ecf0;
 }
+
+.usernamelogout{
+    color: #e6ecf0;
+    text-decoration: none;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 20px;
+    
+}
+
+.usernamelogout:hover{
+    background-color: #2A2A2A;
+    border-radius: 30px;
+    transition: .5s;
+}
+
 /* Feed */
 .feed {
     flex: 0.5;
@@ -302,3 +321,4 @@ a{
 .user{
     color:white;
 }
+

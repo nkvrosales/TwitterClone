@@ -58,6 +58,7 @@ body {
 .sidebar__tweet:hover{
     background-color: #e6ecf0;
     color: #000000;
+    cursor:pointer;
 }
 .logout {
     height: 35px;
@@ -139,6 +140,11 @@ nav a {
     height: 40px;
     margin-left: 480px;
 }
+
+.tweetBox__tweetButton:hover {
+    cursor:pointer;
+}
+
 .profileNavbar{
     padding: 10px;
     position: relative; 
@@ -173,14 +179,10 @@ nav a {
 }
 
 .profilePic {
-    width: 100px; 
-    height: 100px; 
-    border-radius: 50%;
-    position: absolute;
-    left: 15%;
-    bottom: 80%;
-    transform: translate(-50%, 50%);
-    border: 2px solid #fff;
+    width: 100px;
+    transform: translate(-35%, 35%);
+    left: 10%;
+    bottom:80%;
 }
 
 
@@ -284,4 +286,14 @@ nav a {
     color: #e6ecf0;
     font-size: 18px;
     font-weight: 800;
+}
+
+.sidebarExit{
+    color: #e6ecf0;
+    text-decoration: none;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 20px;
 }
