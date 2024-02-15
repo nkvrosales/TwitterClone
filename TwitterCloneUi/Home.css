@@ -323,3 +323,6 @@ a{
     color:white;
 }
 
+.favorite-icon.liked {
+    color: red; 
+  }

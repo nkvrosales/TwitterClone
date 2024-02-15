@@ -131,3 +131,16 @@ posts.forEach(function(post) {
   postMainContainer.appendChild(postContainer);
 });
 });
+
+
+// Assuming you have a CSS class to change the appearance of the favorite icon when liked
+const favoriteIcons = document.querySelectorAll('.favorite-icon');
+
+favoriteIcons.forEach(function(icon) {
+  icon.addEventListener('click', function() {
+    // Toggle the class to change the appearance of the icon
+    icon.classList.toggle('liked');
+
+    // You can also perform additional actions here, like sending a request to the server to update the like count
+  });
+});
