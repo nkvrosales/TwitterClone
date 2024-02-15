@@ -80,10 +80,10 @@
               src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
               alt=""
             />
-            <input type="text" placeholder="What's happening?" />
+            <input type="text" maxlength="280" placeholder="What's happening?" />
           </div>
-  
-          <button class="tweetBox__tweetButton">Tweet</button>
+          
+          <button type="submit" id="post-button" onclick="postTextAreaValueToApi(event)" class="tweetBox__tweetButton">Tweet</button>
         </form>
       </div>
       <!-- tweetbox ends -->
@@ -196,5 +196,7 @@
     </div>
   </div>
     <!-- widgets ends -->
+
+  <script src="Home.js"></script>  
   </body>
 </html>

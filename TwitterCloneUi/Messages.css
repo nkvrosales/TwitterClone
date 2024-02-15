@@ -102,4 +102,5 @@ body {
 .btnmsg:hover {
     background-color: #e6ecf0;
     color: #000000;
+    cursor: pointer;
 }

@@ -115,6 +115,7 @@ nav li {
 }
 nav li:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 nav li {
     color: #e6ecf0;

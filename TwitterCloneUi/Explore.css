@@ -57,6 +57,7 @@ body {
 .sidebar__tweet:hover{
     background-color: #e6ecf0;
     color: #000000;
+    cursor: pointer;
 }
 .logout {
     height: 35px;
@@ -150,6 +151,7 @@ body {
 .btnmsg:hover {
     background-color: #e6ecf0;
     color: #000000;
+    cursor: pointer;
 }
 
 .trending{
