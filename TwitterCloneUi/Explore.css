@@ -14,6 +14,8 @@ body {
     padding: 0 10px;
 }
 .sidebar {
+    font-weight: 900;
+    font-size: 12px;
     border-right: 1px solid #272727;
     flex: 0.2;
     background-color: black;
@@ -40,6 +42,17 @@ body {
 .sidebarOption.active {
     color: #2A2A2A;
 }
+.sidebarOption:hover:not(.active){
+    background-color: #2A2A2A;
+    border-radius: 30px;
+    transition: .5s;
+}
+.sidebarOption.active {
+    color: #2A2A2A;
+}
+.sidebarOption.active:hover {
+    transition: none;
+}
 .sidebarOption a{
     text-decoration: none;
     color: #e6ecf0;
@@ -63,6 +76,7 @@ body {
 a{
     text-decoration: none;
 }
+
 
 .usernamelogout{
     color: #e6ecf0;
