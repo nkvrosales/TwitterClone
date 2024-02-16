@@ -86,17 +86,12 @@ a{
     align-items: center;
     cursor: pointer;
     padding: 20px;
-    
 }
-
 .usernamelogout:hover{
     background-color: #2A2A2A;
     border-radius: 30px;
     transition: .5s;
 }
-
-
-
 .logout {
     height: 35px;
     width: 35px;
@@ -106,74 +101,78 @@ a{
 .material-icons{
     padding: 10px;
 }
-.feed__header {
-    border: 1px solid var(--twitter-background);
-    position: sticky;
-    top: 0;
-    background-color: rgb(8, 0, 0);
-    z-index: 100;
-    padding: 20px 20px;
-    display: flex;
+.feed{
+    width: 600px;
 }
-.feed__header .header-content {
-    display: flex;
-    flex-direction: column; 
-}
-.feed__header h2 {
+.feed h3 {
+    padding: 20px;
     color: #e6ecf0;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 800;
     margin-bottom: 40px; 
 }
-.feed__header h3 {
-    color: #e6ecf0;
+.feed__header {
+    border-bottom: 1px solid var(--twitter-background);
+    background-color: rgb(0, 0, 0);
+    padding: 20px 20px;
 }
 .notif{
+    color: #e6ecf0;
     font-size: 24px;
     margin-top: 200px;
     display: flex;
     justify-content: center;
 }
-nav{
+.header-content{
     position: relative;
+    padding-bottom: 10px;
+
+}
+nav {
+    width: 100%;
+    background-color: #000000;
+}
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    
+}
+nav li {
+    display: flex;
+}
+nav a{
+    font-size: 16px;
     color: #fff;
     text-decoration: none;
-    font-size: 24px;
-    letter-spacing: 2px;
+    position: relative;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around; 
-    padding: 20px;  
-    text-align: center;
-    border-bottom: 1px solid var(--twitter-background);
+nav li a::after{
+    content: "";
+    position: absolute;
+    background-color: rgb(250, 115, 115);
+    height: 3px;
+    width: 0;
+    left: 50%;
+    bottom: 0;
+    margin-bottom: -10px;
+    transform: translateX(-50%);
 }
-nav li {
-    color: #e6ecf0;
+nav a:hover {
+    transform: translateY(-5px);
+    color: rgb(250, 115, 115);
 }
-nav li:hover {
-    text-decoration: underline;
-    cursor: pointer;
+nav li a:hover::after {
+    width: 100%;
+    transition: width 0.5s ease-in-out;
 }
-nav li {
-    color: #e6ecf0;
-    margin-right: 200px;  
-}
-
-nav li:last-child {
-    margin-right: 0;  
-}
-
-
 .widgets {
+    border-left:1px solid var(--twitter-background);
     background-color: #000000;
     flex: 0.3;
     display: flex;
     flex-direction: column;
 }
-
 .widgets__input {
     height: 40px;
     display: flex;

@@ -96,9 +96,6 @@ a{
     border-radius: 30px;
     transition: .5s;
 }
-
-
-
 .logout {
     height: 35px;
     width: 35px;
@@ -112,21 +109,24 @@ a{
     color: #e6ecf0;
 }
 .Messagesinfo{
-    padding: 120px;
     border-top:1px solid #272727 ;
     border-bottom:  1px solid #272727;
     border-left:  1px solid #272727;
     margin-top: 100px;
+    padding: 50px;
     background-color: #000000;
     color: #e6ecf0;
 }
+
 .Messagesinfo h3{
     font-size: 35px;
+    width: 300px;
 }
 .Messagesinfo p{
     color:#5b676e;
 }
 .btnmsg{
+    transition: .5s;
     border: 1px solid #272727;
     background-color: #000000;
     color: #e6ecf0;
