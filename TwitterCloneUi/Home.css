@@ -284,6 +284,7 @@ nav li a:hover::after {
     flex-direction: column;
 }
 .widgets__input {
+    height: 40px;
     display: flex;
     align-items: center;
     background-color:#2A2A2A;

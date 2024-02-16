@@ -295,6 +295,7 @@ nav li a:hover::after {
     flex: 0.3;
 }
 .widgets__input {
+    height: 40px;
     display: flex;
     align-items: center;
     background-color:#2A2A2A;
