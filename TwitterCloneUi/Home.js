@@ -68,69 +68,101 @@ function postTextAreaValueToAPI(event) {
 
 
 
-//FUNCTION FOR GETTING USER POSTS 
-
+// FUNCTION FOR GETTING USER POSTS AND LIKES
 const token = localStorage.getItem('token');
-fetch('http://localhost:3000/api/v1/posts',{
-method :'GET',
-headers: {
-  "Authorization": `Bearer ${token}`,
-  "Accept":"application/json"
-}
-}).then(function (response){
-return response.json();
-}).then(function (posts) {
-// Assuming 'posts' is an array of post objects received from the API
-const postMainContainer = document.querySelector('.feed');
+fetch('http://localhost:3000/api/v1/posts', {
+    method: 'GET',
+    headers: {
+        "Authorization": `Bearer ${token}`,
+        "Accept": "application/json"
+    }
+}).then(function(response) {
+    return response.json();
+}).then(function(posts) {
+    // Assuming 'posts' is an array of post objects received from the API
+    const postMainContainer = document.querySelector('.feed');
 
-posts.forEach(function(post) {
-  // Create the post container div
-  const postContainer = document.createElement('div');
-  postContainer.classList.add('post');
+    posts.forEach(function(post) {
+        // Create the post container div
+        const postContainer = document.createElement('div');
+        postContainer.classList.add('post');
 
-  // Create the post avatar div and add it to the post container
-  const postAvatar = document.createElement('div');
-  postAvatar.classList.add('post__avatar');
-  postAvatar.innerHTML = '<img src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"/>';
-  postContainer.appendChild(postAvatar);
+        // Create the post avatar div and add it to the post container
+        const postAvatar = document.createElement('div');
+        postAvatar.classList.add('post__avatar');
+        postAvatar.innerHTML = '<img src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"/>';
+        postContainer.appendChild(postAvatar);
 
-  // Create the post body div and add it to the post container
-  const postBody = document.createElement('div');
-  postBody.classList.add('post__body');
+        // Create the post body div and add it to the post container
+        const postBody = document.createElement('div');
+        postBody.classList.add('post__body');
 
-  // Create the post header div and add it to the post body
-  const postHeader = document.createElement('div');
-  postHeader.classList.add('post__header');
+        // Create the post header div and add it to the post body
+        const postHeader = document.createElement('div');
+        postHeader.classList.add('post__header');
 
-  // Create the post header text div and add it to the post header
-  const postHeaderText = document.createElement('div');
-  postHeaderText.classList.add('post__headerText');
-  postHeaderText.innerHTML = `<h3>${post.postedBy}</h3>`; // Assuming 'username' is a property of the post object
-  postHeader.appendChild(postHeaderText);
+        // Create the post header text div and add it to the post header
+        const postHeaderText = document.createElement('div');
+        postHeaderText.classList.add('post__headerText');
+        postHeaderText.innerHTML = `<h3>${post.postedBy}</h3>`; // Assuming 'username' is a property of the post object
+        postHeader.appendChild(postHeaderText);
 
-  // Create the post header description div and add it to the post header
-  const postHeaderDescription = document.createElement('div');
-  postHeaderDescription.classList.add('post__headerDescription');
-  postHeaderDescription.innerHTML = `<p>${post.content}</p>`; // Assuming 'content' is a property of the post object
-  postHeader.appendChild(postHeaderDescription);
+        // Create the post header description div and add it to the post header
+        const postHeaderDescription = document.createElement('div');
+        postHeaderDescription.classList.add('post__headerDescription');
+        postHeaderDescription.innerHTML = `<p>${post.content}</p>`; // Assuming 'content' is a property of the post object
+        postHeader.appendChild(postHeaderDescription);
 
-  // Add the post header to the post body
-  postBody.appendChild(postHeader);
+        // Add the post header to the post body
+        postBody.appendChild(postHeader);
 
-  // Create the post footer div and add it to the post body
-  const postFooter = document.createElement('div');
-  postFooter.classList.add('post__footer');
-  postFooter.innerHTML = '<span class="material-icons"> repeat favorite_border publish</span>';
-  postBody.appendChild(postFooter);
-  
+        // Create the post footer div and add it to the post body
+        const postFooter = document.createElement('div');
+        postFooter.classList.add('post__footer');
+        postFooter.innerHTML = `
+          <span class="material-icons"> repeat </span>
+          <span class="material-icons like-icon"> favorite_border </span>
+          <span class="material-icons"> publish </span>
+        `;
+        postBody.appendChild(postFooter);
 
-  // Add the post body to the post container
-  postContainer.appendChild(postBody);
+        // Get the like icon element
+        const likeIcon = postFooter.querySelector('.like-icon');
 
-  // Add the post container to the post main container
-  postMainContainer.appendChild(postContainer);
+        // Check if there is a saved state for the like icon
+        const savedLikeState = localStorage.getItem('likeState_' + post.id);
+        if (savedLikeState === 'liked') {
+          likeIcon.textContent = 'favorite';
+          likeIcon.style.color = 'red';
+        }
+
+        // Add event listener to handle like functionality
+        likeIcon.addEventListener('click', function() {
+          if (likeIcon.textContent === 'favorite_border') {
+            likeIcon.textContent = 'favorite';
+            likeIcon.style.color = 'red';
+            // Save the state of the like icon as liked
+            localStorage.setItem('likeState_' + post.id, 'liked');
+            
+          } else {
+            likeIcon.textContent = 'favorite_border';
+            likeIcon.style.color = ''; // Reset color
+            // Remove the saved state of the like icon
+            localStorage.removeItem('likeState_' + post.id);
+            
+          }
+        });
+
+
+
+        // Add the post body to the post container
+        postContainer.appendChild(postBody);
+
+        // Add the post container to the post main container
+        postMainContainer.appendChild(postContainer);
+    });
 });
-});
+
 
 
 // FUNCTION FOR LIKES
@@ -144,3 +176,4 @@ favoriteIcons.forEach(function(icon) {
   
   });
 });
+
