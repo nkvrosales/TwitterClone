@@ -14,6 +14,8 @@ body {
     padding: 0 10px;
 }
 .sidebar {
+    text-decoration: none;
+    color: #e6ecf0;
     font-weight: 900;
     font-size: 12px;
     border-right: 1px solid #272727;
@@ -24,7 +26,6 @@ body {
     padding-left: 20px;
     padding-right: 20px;
 }
-
 .sidebarOption {
     margin-top: 20px;
     display: flex;
@@ -33,14 +34,6 @@ body {
     padding: 20px;
     color: #e6ecf0;
     transition: background-color 100ms ease-out, color 100ms ease-out;
-}
-
-.sidebarOption:hover {
-    background-color: #2A2A2A;
-    border-radius: 30px;
-}
-.sidebarOption.active {
-    color: #2A2A2A;
 }
 .sidebarOption:hover:not(.active){
     background-color: #2A2A2A;
@@ -53,10 +46,6 @@ body {
 .sidebarOption.active:hover {
     transition: none;
 }
-.sidebarOption a{
-    text-decoration: none;
-    color: #e6ecf0;
-}
 .sidebar__tweet {
     width: 100%;
     background-color: rgb(3, 0, 0);
@@ -67,14 +56,24 @@ body {
     height: 50px;
     margin-top: 20px;
 }
-.sidebar__tweet:hover{
+.sidebar__tweet:hover {
     background-color: #e6ecf0;
     color: #000000;
+    transition: .5s;
     cursor: pointer;
 }
-
+.sidebarExit{
+    color: #e6ecf0;
+    text-decoration: none;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 20px;
+}
 a{
     text-decoration: none;
+    color: #e6ecf0;
 }
 
 

@@ -19,6 +19,8 @@ body {
 
 /* Sidebar */
 .sidebar {
+    font-weight: 900;
+    font-size: 12px;
     border-right: 1px solid var(--twitter-background);
     flex: 0.2;
     background-color: black;
@@ -36,15 +38,22 @@ body {
     color: #e6ecf0;
     transition: background-color 100ms ease-out, color 100ms ease-out;
 }
-.sidebarOption:hover {
+.feed_hr{
+    border: none;
+    height: 1px; 
+    background-color: #333; 
+}
+.sidebarOption:hover:not(.active){
     background-color: #2A2A2A;
     border-radius: 30px;
+    transition: .5s;
 }
-
 .sidebarOption.active {
     color: #2A2A2A;
 }
-
+.sidebarOption.active:hover {
+    transition: none;
+}
 .sidebar__tweet {
     width: 100%;
     background-color: rgb(3, 0, 0);
@@ -55,10 +64,20 @@ body {
     height: 50px;
     margin-top: 20px;
 }
-.sidebar__tweet:hover{
+.sidebar__tweet:hover {
     background-color: #e6ecf0;
     color: #000000;
-    cursor:pointer;
+    transition: .5s;
+    cursor: pointer;
+}
+.sidebarExit{
+    color: #e6ecf0;
+    text-decoration: none;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 20px;
 }
 .logout {
     height: 35px;

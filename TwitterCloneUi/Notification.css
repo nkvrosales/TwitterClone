@@ -18,7 +18,10 @@ body {
 }
 .sidebar {
     text-decoration: none;
-    border-right: 1px solid var(--twitter-background);
+    color: #e6ecf0;
+    font-weight: 900;
+    font-size: 12px;
+    border-right: 1px solid #272727;
     flex: 0.2;
     background-color: black;
     min-width: 250px;
@@ -35,17 +38,16 @@ body {
     color: #e6ecf0;
     transition: background-color 100ms ease-out, color 100ms ease-out;
 }
-.sidebarOption:hover {
+.sidebarOption:hover:not(.active){
     background-color: #2A2A2A;
     border-radius: 30px;
+    transition: .5s;
 }
-
 .sidebarOption.active {
     color: #2A2A2A;
 }
-.sidebarOption a{
-    text-decoration: none;
-    color: #e6ecf0;
+.sidebarOption.active:hover {
+    transition: none;
 }
 .sidebar__tweet {
     width: 100%;
@@ -57,17 +59,25 @@ body {
     height: 50px;
     margin-top: 20px;
 }
-
 .sidebar__tweet:hover {
     background-color: #e6ecf0;
     color: #000000;
-    cursor:pointer;
+    transition: .5s;
+    cursor: pointer;
 }
-
+.sidebarExit{
+    color: #e6ecf0;
+    text-decoration: none;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 20px;
+}
 a{
     text-decoration: none;
+    color: #e6ecf0;
 }
-
 .usernamelogout{
     color: #e6ecf0;
     text-decoration: none;
