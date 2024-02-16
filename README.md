@@ -4,7 +4,7 @@
 # How your website accomplished each item in the criteria.
 ## - Where could the concepts discussed in class be seen in your website?
 
-The program incorporates the concepts from Essential HTML tags, CSS styling, Responsive Design, Animations, DOM manipulation, and API integration. Each of these key elements contributes to the overall functionality, aesthetics, and interactivity of the program.
+The program incorporates the concepts from Essential HTML tags, CSS styling, Animations, DOM manipulation, and API integration. Each of these key elements contributes to the overall functionality, aesthetics, and interactivity of the program.
 
 ## - What was your inspiration for the design of the website?
 
