@@ -60,6 +60,7 @@ function postTextAreaValueToAPI(event) {
     })
     .then((data) => {
       console.log("API response:", data);
+      window.location.reload();
     })
     .catch((error) => {
       console.error("Error posting to API:", error);
