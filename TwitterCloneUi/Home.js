@@ -39,7 +39,7 @@ function postTextAreaValueToAPI(event) {
   const textareaElement = document.getElementById("text-area");
   const textAreaValue = textareaElement.value;
 
-  const apiUrl = "http://localhost:3000/api/v1/posts"; 
+  const apiUrl = "/api/v1/posts"; 
   const token = localStorage.getItem('token');
 
   const options = {
@@ -70,7 +70,7 @@ function postTextAreaValueToAPI(event) {
 
 // FUNCTION FOR GETTING USER POSTS AND LIKES
 const token = localStorage.getItem('token');
-fetch('http://localhost:3000/api/v1/posts', {
+fetch('api/v1/posts', {
     method: 'GET',
     headers: {
         "Authorization": `Bearer ${token}`,
