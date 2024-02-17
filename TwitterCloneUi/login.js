@@ -11,7 +11,7 @@ function regisPass() {
     } else {
         register(username, password);
         alert("Registration successful! Please login with your credentials.");
-        window.location.href = "login.html"; // Redirect to login.html
+        window.location.href = "index.html"; // Redirect to Log in site
     }
 }
 
